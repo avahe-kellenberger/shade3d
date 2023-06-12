@@ -1,7 +1,24 @@
-# This is just an example to get you started. A typical library package
-# exports the main API in this file. Note that you cannot rename this file
-# but you can remove it if you wish.
+import vulkan, glm/[mat, vec]
 
-proc add*(x, y: int): int =
-  ## Adds two files together.
-  return x + y
+import shade3d/window
+
+proc main() =
+  let window = newWindow(800, 600, "Shade 3D!")
+
+  while not window.shouldClose():
+    window.pollEvents()
+
+#   var extensionCount: uint32
+#   discard vkEnumerateInstanceExtensionProperties(nil, extensionCount.addr, nil)
+
+#   echo "Extensions supported: " & $extensionCount
+
+#   var
+#     matrix: Mat4[float]
+#     vec: Vec4[float]
+
+#   let test = matrix * vec
+
+when isMainModule:
+  main()
+
